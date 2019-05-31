@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    商品单价：￥3.5
+    商品数量：<input type="number" value="1" /><br>
+    小计：<output>￥3.5</output> 
+    <h1>刻度尺</h1>
+    当月薪水:
+    <meter min="0" max="100000" low="3000" high="90000" optimum="100000" value="90000"></meter>
+    <h3>左右晃动的进度条</h3>
+    <progress></progress>
+    <h3>有指定值的进度条</h3>
+    <h3>创建可以动态前进:进度条</h3>
+    <h3>定会器1s修改value+0.1</h3>
+    <progress value="0.0" id="p3"/>   
+    <script>
+            // 1:获取进度条
+            var p3 = document.getElementById("p3");
+            // 2:创建周期定时器 1s
+            var t = setInterval(function(){
+            // 3:获取value 加0.1
+                var v =p3.value + 0.1;
+            // 4:保存回value
+                p3.value = v;
+            // 5:如果value>1停止定时器
+            if(v>1){
+                // clearInterval(t)
+                p3.value=0      
+                }
+            },500)
+    </script>
+</body>
+</html>
